@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card">
+  <div class="card-header bg-dark text-warning text-center">
+    <h4>{{ stack_book.title }}</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-center">{{ stack_book.author }}</h5>
+    <br/>
+    <p class="card-text text-center">
+    	<strong>Status:               </strong>{{ stack_book.status }} </p>
+	<p class="card-text text-center">
+    	<strong>Rating:               </strong>{{ stack_book.rating }} </p>
+	<p class="card-text text-center">
+    	<strong>Genre:               </strong>{{ stack_book.genre }} </p>
+	<p class="card-text text-center">
+    	<strong>ID:               </strong>{{ stack_book.id }} </p>
+    </p>
+   
+  </div>
+</div>
+
+<br/> 
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a href="{% url 'home' %}" class="btn btn-sm btn-light border-dark">Return</a>
+    <a href="{% url 'delete_book' stack_book.id %}" class="btn btn-sm btn-light border-danger text-danger">Delete</a>
+
+	<a href="{% url 'update_book' stack_book.id %}" class="btn btn-sm btn-light border-primary text-primary">Update Info</a>
+
+</div>
+
+
+{% endblock %}

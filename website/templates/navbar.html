@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">Django CRM</a>
+    <h4><a class="navbar-brand text-dark" href="{% url 'home' %}">Dariela's Book Stack</a></h4>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,24 +8,27 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         
         {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="{% url 'add_book' %}">Add Book</a>
+        </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+         <a class="nav-link text-secondary" href="{% url 'logout' %}">Logout</a>
         </li>
 
         {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'register' %}">Register</a>
+          <a class="nav-link text-secondary" href="{% url 'register' %}">Register</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'home' %}">Login</a>
+          <a class="nav-link text-secondary" href="{% url 'home' %}">Login</a>
         </li>
       
        {% endif %}
 
       </ul>
-      
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">Django CRM</div>
     </div>
   </div>
 </nav>
